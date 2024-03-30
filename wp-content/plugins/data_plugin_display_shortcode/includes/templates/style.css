@@ -1,0 +1,151 @@
+#pokemonModal {
+    color: #333;
+}
+
+#pokemonModal .modal-body {
+    font-size: 16px;
+}
+
+#pokemonModalLabel {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+#abilitiesContent,
+#statsContent,
+#typesContent,
+#weightContent {
+    margin-bottom: 10px;
+}
+
+#pokemonImage {
+    max-width: 100%;
+    height: auto;
+    margin-top: 15px;
+}
+
+#pokemonModal .modal-content {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.type-square {
+    display: inline-block;
+    padding: 5px; /* Add padding for better appearance */
+    margin-right: 5px; /* Adjust as needed */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    text-align: center; /* Center the text within the square */
+    width: auto; /* Allow dynamic width based on content */
+}
+
+.normal-type {
+    background-color: #A8A77A;
+    color: #fff; /* Set text color for better visibility */
+}
+
+.fire-type {
+    background-color: #EE8130;
+    color: #fff;
+}
+
+.water-type {
+    background-color: #6390F0;
+    color: #fff;
+}
+
+.dark-type {
+    background-color: #333333;
+    color: silver;
+}
+
+.fairy-type {
+    background-color: #EE99AC;
+    color: #fff;
+}
+
+.fighting-type {
+    background-color: #C22E28;
+    color: #fff;
+}
+
+.flying-type {
+    background-color: #A98FF3;
+    color: #fff;
+}
+
+.ghost-type {
+    background-color: #735797;
+    color: #fff;
+}
+
+.grass-type {
+    background-color: #7AC74C;
+    color: #fff;
+}
+
+.ground-type {
+    background-color: #E2BF65;
+    color: #fff;
+}
+
+.ice-type {
+    background-color: #96D9D6;
+    color: #fff;
+}
+
+.poison-type {
+    background-color: #A33EA1;
+    color: #fff;
+}
+
+.psychic-type {
+    background-color: #F95587;
+    color: #fff;
+}
+
+.rock-type {
+    background-color: #B6A136;
+    color: #fff;
+}
+
+.steel-type {
+    background-color: #B7B7CE;
+    color: #fff;
+}
+
+.electric-type {
+    background-color: #F7D02C;
+    color: #fff;
+}
+
+.bug-type {
+    background-color: #A6B91A;
+    color: #fff;
+}
+
+.dragon-type {
+    background-color: #6F35FC;
+    color: #fff;
+}
+
+.steller-type {
+    background-color: #0bafec;
+    color: #fff;
+}
+
+/* Styling for abilities */
+
+
+/* Styling for stats */
+.stats-label {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.stats-value {
+    font-weight: normal;
+    margin-right: 10px;
+}

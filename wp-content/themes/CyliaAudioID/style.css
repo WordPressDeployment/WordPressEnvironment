@@ -1,0 +1,192 @@
+/*
+Theme Name:   CyliaAudioID
+Description:  Write here a brief description about your child-theme
+Author:       Marcel Byron
+Author URL:   Write here the author's blog or website url
+Template:     astra
+Version:      1.0
+Lice nse:      GNU General Public License v2 or later
+License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain:  CyliaAudioID
+*/
+
+/* Write here your own personal stylesheet */
+
+
+/*POPUP MAKER (button style)*/
+.pum-form--style-default button{
+background-color:#2468b0!important;
+color:#FFFFFF!important;
+font-weight: 600;
+}
+
+/*CHART NAV*/
+
+table{
+border: none!important;
+}
+
+#chartdisplaytable{
+text-align: center;
+}
+
+.artistename{
+text-align: center;
+}
+
+.producername{
+line-height: 1em;
+color: black;
+text-align:center;
+}
+
+/*RFID PROGRAMMER*/
+/*background-color determined by javascript update*/
+button#Find_Device{
+/*background-color:#08c236!important;*/
+margin-left:5px;
+}
+
+input#event_name{
+margin-left: 10px;
+}
+
+input#event_location{
+margin-left: 33px;
+}
+
+input#event_date{
+margin-left: 59px;}
+
+input#event_start{
+margin-left: 58px;}
+
+input#event_end{
+margin-left: 65px;}
+
+
+button#Scan_user{
+color: #ffffff;
+padding-left: 10px;
+padding-right: 10px;
+}
+
+button#Scan_admin{
+/*background-color: #2468b0!important;*/
+color: #ffffff;
+padding-left: 10px;
+padding-right: 10px;
+}
+
+button#scanAdminOnProgrammer{
+/*background-color: #2468b0!important;*/
+color: #ffffff;
+padding-left: 10px;
+padding-right: 10px;
+}
+
+button#eventDetailsButton{
+/*background-color: #2468b0!important;*/
+color: #ffffff!important;
+padding-left: 10px;
+padding-right: 10px;
+}
+
+button#activateButton{
+/*background-color: #2468b0!important;*/
+color: #ffffff!important;
+padding-left: 10px;
+padding-right: 10px;
+margin-left:10px;
+}
+
+button#Confirm_user{
+/*background-color: #2468b0!important;*/
+color: #ffffff;
+padding-left: 10px;
+padding-right: 10px;
+}
+
+button#Done{
+/*background-color: #2468b0!important;*/
+color: #ffffff;
+padding-left: 10px;
+padding-right: 10px;
+}
+
+button#restartScanButton{
+/*background-color: #e57a44!important;*/
+color: #ffffff!important;
+padding-left: 10px;
+padding-right: 10px;
+margin-left: 6px!important;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+.eventsrow{
+  display: flex;
+  margin-left:-5px;
+  margin-right:-5px;
+}
+
+.eventscolumn{
+  /*flex: 50%;*/
+  padding: 5px;
+}
+
+.stepcolumn{
+  padding: 5px;
+  padding-left: 35px;
+  margin-top: 13px;
+}
+
+/*Previous Page Nav link on chart pages*/
+
+.nav-links{
+margin-left: auto;
+margin-right:auto;
+max-width: 1180px;
+}
+
+
+/*Breadcrumbs align*/
+.ast-breadcrumbs-wrapper{
+padding-left: 50px;
+}
+
+
+/*Release Data Viewer (Song Titles)*/
+
+ .videoid{
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.column is-one-fifth-desktop is-one-third-tablet is-half-mobile{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* Responsive layout - stacks left and right columns on top of each */
+@media screen and (max-width: 600px) {
+
+
+th{
+font-size: small!important;
+}
+
+.elementor-column-gap-default>.elementor-row>.elementor-column>.elementor-element-populated>.elementor-widget-wrap{
+padding:2px!important;
+}
+
+.site-branding img, .site-header .site-logo-img .custom-logo-link img {
+}
+}
