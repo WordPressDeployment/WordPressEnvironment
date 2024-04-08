@@ -20,8 +20,10 @@ class webService
         add_action('wp_ajax_nopriv_refresh_table_ajax', 'refresh_table_ajax_callback'); // For non-logged in users
         add_action('wp_head', 'output_custom_css');
         add_action('plugins_loaded', 'create_custom_table');
+        add_shortcode('custom_login_form', 'custom_login_form_shortcode');
         //experimental area
-        add_action('wp_enqueue_scripts', array($this, 'enqueue_listener'));
+        add_shortcode('wp_enqueue_scripts', array($this, 'enqueue_listener'));
+        // add_action('wp_enqueue_scripts', array($this, 'enqueue_listener'));
         add_action('wp_ajax_insert_socket_data', array($this, 'insert_socket_data'));
         add_action('wp_ajax_nopriv_insert_socket_data', array($this, 'insert_socket_data'));
     }
@@ -486,7 +488,7 @@ function create_custom_table() {
     global $wpdb;
 
     // Define table name
-    $table_name = $wpdb->prefix . 'MS_CleanData';
+    $table_name = $wpdb->prefix . 'ms_cleandata';
 
      // SQL to create the table
     $sql = "CREATE TABLE IF NOT EXISTS $table_name (
@@ -506,3 +508,66 @@ function create_custom_table() {
     // Create the table
     dbDelta($sql);
 }
+
+
+//================ endpoint registration for GET requests for db information ========================================
+
+// Register custom REST API endpoint
+function register_custom_rest_endpoint() {
+    register_rest_route( 'myplugin/v1', '/get-db-data', array(
+        'methods'             => 'GET',
+        'callback'            => 'get_db_data_callback',
+        'permission_callback' => 'custom_rest_permission_callback', // Add permission callback
+    ));
+}
+add_action( 'rest_api_init', 'register_custom_rest_endpoint' );
+
+// Permission callback function for the custom REST endpoint
+function custom_rest_permission_callback( $request ) {
+    // Check if the current user is authenticated and has the administrator role
+    if ( ! current_user_can( 'administrator' ) ) {
+        return new WP_Error( 'rest_forbidden', esc_html__( 'You do not have permission to access this endpoint.', 'myplugin' ), array( 'status' => 403 ) );
+    }
+
+    return true; // Access granted
+}
+
+// Callback function for the custom REST endpoint
+function get_db_data_callback( $request ) {
+    global $wpdb;
+
+    // Step 1: Connect to the WordPress database
+    $wpdb->ms_cleandata = $wpdb->prefix . 'ms_cleandata';
+
+    // Step 2: Query the database
+    $data = $wpdb->get_results("SELECT * FROM $wpdb->ms_cleandata", ARRAY_A);
+
+    // Return the data as the response
+    return rest_ensure_response( $data );
+}
+
+// want to request db data? use this (http://cyliaaudioidrevamp.local/wp-json/myplugin/v1/get-db-data) replace base url
+
+
+//================ endpoint registration for GET requests for db information ========================================
+
+
+//================= login page shortcode with signout =======================================================
+// Register the shortcode
+function custom_login_form_shortcode() {
+    // Check if the user is logged in
+    if (is_user_logged_in()) {
+        // If logged in, display a message and a logout link
+        $current_user = wp_get_current_user();
+        $logout_url = wp_logout_url(home_url());
+        $message = 'You are already signed in as ' . esc_html($current_user->user_login) . '. <a href="' . esc_url($logout_url) . '">Logout</a>';
+        return $message;
+    } else {
+        // If not logged in, display the WordPress login form
+        ob_start();
+        wp_login_form();
+        return ob_get_clean();
+    }
+}
+
+//================= login page shortcode with signout =======================================================
