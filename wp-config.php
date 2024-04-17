@@ -57,8 +57,7 @@ define( 'SECURE_AUTH_SALT', '@CK6|lFc@n @k<85$+nj*u!d;|Mj>06[8oHz;ZAI6fAyn_m{MsC
 define( 'LOGGED_IN_SALT',   'z?>FL|pT.~n?h_>TT/TVtr*7PFd<B](W~lsrO4^f$b;~2l^E2wmN)E&/d1-Vt3K!' );
 define( 'NONCE_SALT',       '/HAo#(J=[mj/d<vKm@DU`GMW2y2K&u{kw_4zAy,/({ fu|eiRO@#LzIrHERo]isL' );
 
-define('JWT_AUTH_SECRET_KEY', 'ccdev');
-define('JWT_AUTH_CORS_ENABLE', true);
+
 /**#@-*/
 
 /**
